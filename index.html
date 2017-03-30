@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-  </head>
-  <body>
-      <h1 id="login">Login (socket)</h1>
-      <h2 id="route">Route (express route)</h2>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <title>title</title>
+    </head>
+    <body>
+        <h1 id="login">Login (socket)</h1>
+        <h2 id="route">Route (express route)</h2>
 
-        var socket = io('/');
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+        <script>
 
-        const login = document.getElementById('login');
-        login.addEventListener('click', () => {
-            socket.emit('login', {name: 'Matt'})
-        })
+            var socket = io('/');
 
-        const route = document.getElementById('route');
-        route.addEventListener('click', () => {
-            fetch('/route')
-        })
+            var login = document.getElementById('login');
+            login.addEventListener('click', function() {
+                socket.emit('login', {name: 'Matt'})
+            })
 
-    </script>
-  </body>
+            var route = document.getElementById('route');
+            route.addEventListener('click', function() {
+                fetch('/route')
+            });
+
+        </script>
+    </body>
 </html>
