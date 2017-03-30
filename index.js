@@ -6,7 +6,7 @@ const io = require('socket.io')(server);
 const session = require('express-session')({
     secret: 'secret',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 });
 var sharedsession = require('express-socket.io-session');
 
